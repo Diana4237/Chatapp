@@ -96,16 +96,5 @@
         android:layout_centerHorizontal="true"
         />
 
-    <ImageView
-        android:id="@+id/addItem"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/round"
-        android:src="@drawable/ic_plus" />
+
 </RelativeLayout>

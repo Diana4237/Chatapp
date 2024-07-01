@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.chatapplication.notes.PlanDayActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -134,33 +135,36 @@ private CheckBox milk;
                 if(nameVid.getText().toString()!=null&&nameVid.getText().toString().trim().length()>0)
                 {
                     nameV=nameVid.getText().toString();
-                }
-                else{nameV=" ";}
-                long currentTimeMillis = System.currentTimeMillis();
-                long moscowTimeMillis = currentTimeMillis + (3 * 60 * 60 * 1000);
-                Date moscowTime = new Date(moscowTimeMillis);
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                String currentTime = sdf.format(moscowTime);
-                String way="";
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long moscowTimeMillis = currentTimeMillis + (3 * 60 * 60 * 1000);
+                    Date moscowTime = new Date(moscowTimeMillis);
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    String currentTime = sdf.format(moscowTime);
+                    String way="";
 
-                if(oven.isChecked()==true){
-                    way="Oven";
+                    if(oven.isChecked()==true){
+                        way="Oven";
+                    }
+                    if(unbaking.isChecked()==true){
+                        way="Without baking";
+                    }
+                    if(micro.isChecked()==true){
+                        way="Microwave";
+                    }
+
+                    String id = mDataBase.getKey();
+                    // String newKey = mDatabase.push().getKey();
+                    Video video = new Video(nameV,currentTime,way,loginUser,url,checkBoxMilk,checkBoxMeat,checkBoxCream,checkBoxFruit,checkBoxVeget,checkBoxYogurt,checkBoxCheese,checkBoxEgg,checkBoxBerrie, id);
+                    mDataBase.push().setValue(video);
+
+                    Intent intent = new Intent(AddVideo.this, LentaVideo.class);
+                    intent.putExtra("login", loginUser);
+                    startActivity(intent);
                 }
-                if(unbaking.isChecked()==true){
-                    way="Without baking";
-                }
-                if(micro.isChecked()==true){
-                    way="Microwave";
+                else{nameV=" ";
+                    Toast.makeText(AddVideo.this,"Заполните пустые поля",Toast.LENGTH_SHORT).show();
                 }
 
-                String id = mDataBase.getKey();
-                // String newKey = mDatabase.push().getKey();
-                Video video = new Video(nameV,currentTime,way,loginUser,url,checkBoxMilk,checkBoxMeat,checkBoxCream,checkBoxFruit,checkBoxVeget,checkBoxYogurt,checkBoxCheese,checkBoxEgg,checkBoxBerrie, id);
-                mDataBase.push().setValue(video);
-
-                Intent intent = new Intent(AddVideo.this, LentaVideo.class);
-                intent.putExtra("login", loginUser);
-                startActivity(intent);
             }
         });
     }

@@ -74,16 +74,7 @@ public class PlanDayActivity2 extends AppCompatActivity {
         mDataBase = FirebaseDatabase.getInstance().getReference("plan");
 
 
-        addItem=findViewById(R.id.addItem);
-        addItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PlanDayActivity2.this, AddItem.class);
-                intent.putExtra("login", loginUser);
-                intent.putExtra("password",passwordText);
-                startActivity(intent);
-            }
-        });
+
 
         addVideo =findViewById(R.id.addVideo);
         addVideo.setOnClickListener(new View.OnClickListener() {
