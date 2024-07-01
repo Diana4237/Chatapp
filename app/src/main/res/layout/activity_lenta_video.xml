@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LentaVideo"
+    android:background="@color/theme_color">
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/addVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Add video"
+            android:textColor="@color/theme_color_8"/>
+        <Button
+            android:id="@+id/lentaVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Home"
+            android:textColor="@color/theme_color"/>
+        <Button
+            android:id="@+id/mess"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Messages"
+            android:textColor="@color/theme_color_8"/>
+        <Button
+            android:id="@+id/plan"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Plan"
+            android:textColor="@color/theme_color_8"/>
+    </LinearLayout>
+<androidx.appcompat.widget.SearchView
+    android:id="@+id/search"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_find"
+    app:queryHint="Search here..."
+    android:layout_below="@+id/menu"
+    android:layout_marginTop="20dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:iconifiedByDefault="false"
+    />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lenta"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
+</RelativeLayout>

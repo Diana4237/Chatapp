@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ChatApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">#FEF6AD</item>
+        <item name="colorPrimaryVariant">@color/theme_color</item>
+    </style>
+    <style name="CustomDatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Цвет текста выбранной даты -->
+        <item name="colorAccent">@color/theme_color</item>
+        <!-- Цвет текста диалога -->
+        <item name="android:background">#FEF6AD</item>
+        <!-- Цвет текста заголовка -->
+        <item name="android:textColor">@color/theme_color_8</item>
+    </style>
+    <style name="Theme.ChatApplication" parent="Base.Theme.ChatApplication" />
+</resources>
