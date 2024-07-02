@@ -108,30 +108,7 @@ public class PlanDayActivity2 extends AppCompatActivity {
         tProc=findViewById(R.id.tProc);
 
 
-        timerBtn=findViewById(R.id.timerBtn);
-        timerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar now = Calendar.getInstance();
-                Calendar midnight = Calendar.getInstance();
-                midnight.add(Calendar.DAY_OF_MONTH, 1);
-                midnight.set(Calendar.HOUR_OF_DAY, 0);
-                midnight.set(Calendar.MINUTE, 0);
-                midnight.set(Calendar.SECOND, 0);
-                midnight.set(Calendar.MILLISECOND, 0);
 
-                // Вычисляем разницу в миллисекундах
-                long millisecondsLeft = midnight.getTimeInMillis() - now.getTimeInMillis();
-
-                // Преобразуем миллисекунды в часы, минуты и секунды
-                long hours = millisecondsLeft / (1000 * 60 * 60);
-                long minutes = (millisecondsLeft / (1000 * 60)) % 60;
-                long seconds = (millisecondsLeft / 1000) % 60;
-
-                String mes="День не бесконечен! До конца дня "+ hours + " часов " + minutes + " минут " + seconds + " секунд";
-                Toast.makeText(PlanDayActivity2.this,mes,Toast.LENGTH_SHORT).show();
-            }
-        });
 
         calendar=findViewById(R.id.calendarBtn);
         calendar.setOnClickListener(new View.OnClickListener() {
